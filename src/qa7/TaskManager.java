@@ -1,5 +1,7 @@
 package qa7;
 
+import qa6.QA6;
+
 import java.util.List;
 
 public interface TaskManager {
@@ -17,5 +19,7 @@ public interface TaskManager {
     /**
      * @return список заданий, упорядоченных по id
      */
-    List<Task> getTasks();
+    List<Task> getTasks() throws QA6.ManagerSaveException;
+
+    void updateTask(Task task);
 }

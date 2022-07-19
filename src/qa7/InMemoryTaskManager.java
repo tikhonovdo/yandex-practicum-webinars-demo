@@ -38,6 +38,13 @@ public class InMemoryTaskManager implements TaskManager {
                 .toList();
     }
 
+    @Override
+    public void updateTask(Task task) {
+        Task newTask = new Task(task);
+        newTask.setId(task.getId());
+        tasks.put(newTask.getId(), newTask);
+    }
+
     private int getNextId() {
         return idGenerator++;
     }
